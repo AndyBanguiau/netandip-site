@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetAndIP — Gestion d'adresses IP Windows simplifiée</title>
+  <meta name="description" content="NetAndIP est un gestionnaire de configuration réseau Windows. Changez d'adresse IP en un clic, gérez vos profils réseau par site et rôle. Gratuit, sans inscription, aucune donnée collectée.">
+  <meta name="keywords" content="gestionnaire IP Windows, gestion adresse IP, configuration réseau Windows, changer adresse IP, outil réseau IT">
+  <meta name="author" content="NetAndIP">
+  <link rel="canonical" href="https://andybanguiau.github.io/netandip-site/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://andybanguiau.github.io/netandip-site/">
+  <meta property="og:title" content="NetAndIP — Gestion d'adresses IP Windows simplifiée">
+  <meta property="og:description" content="Changez d'adresse IP en un clic. Gérez vos profils réseau par site et rôle. Gratuit, Windows 10/11.">
+  <meta property="og:image" content="https://andybanguiau.github.io/netandip-site/assets/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NetAndIP — Gestion d'adresses IP Windows simplifiée">
+  <meta name="twitter:description" content="Changez d'adresse IP en un clic. Gratuit, Windows 10/11.">
+  <meta name="twitter:image" content="https://andybanguiau.github.io/netandip-site/assets/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "NetAndIP",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "description": "Gestionnaire de configuration réseau Windows. Changez d'adresse IP en un clic.",
+    "softwareVersion": "3.0.0",
+    "downloadUrl": "https://github.com/AndyBanguiau/netandip/releases/latest",
+    "author": { "@type": "Person", "name": "Andy Banguiau" }
+  }
+  </script>
+
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<nav class="nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="NetAndIP — Accueil">
+      <img src="assets/logo.png" alt="Logo NetAndIP" width="28" height="28">
+      <span>NetAndIP</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#features">Fonctionnalités</a></li>
+      <li><a href="#how">Comment ça marche</a></li>
+      <li><a href="#pricing">Tarifs</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="download.html" class="btn btn-primary nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Télécharger
+    </a>
+    <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div class="nav-mobile" role="dialog" aria-label="Menu mobile">
+  <button class="nav-mobile-close" aria-label="Fermer le menu">&times;</button>
+  <a href="#features">Fonctionnalités</a>
+  <a href="#how">Comment ça marche</a>
+  <a href="#pricing">Tarifs</a>
+  <a href="#faq">FAQ</a>
+  <a href="download.html" class="btn btn-primary btn-lg">Télécharger gratuitement</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-badge reveal">
+      <span class="badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Version 3.0.0 disponible — Windows 10 / 11
+      </span>
+    </div>
+    <h1 id="hero-title" class="reveal reveal-delay-1">
+      Gérez vos <span class="gradient-text">adresses IP</span><br>en quelques secondes
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      NetAndIP simplifie la configuration réseau pour les professionnels IT.
+      Basculez d'un profil réseau à l'autre sans jamais ouvrir les paramètres Windows.
+    </p>
+    <div class="hero-ctas reveal reveal-delay-2">
+      <a href="download.html" class="btn btn-primary btn-lg" data-download="hero-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Télécharger gratuitement
+      </a>
+      <a href="#features" class="btn btn-ghost btn-lg">
+        Voir les fonctionnalités
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+    <p class="hero-trust reveal reveal-delay-3">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Sans inscription
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Aucune donnée collectée
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Fonctionne hors ligne
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Windows 10 / 11 x64
+      </span>
+    </p>
+
+    <!-- App mockup -->
+    <div class="hero-mockup reveal reveal-delay-3">
+      <div class="hero-mockup-glow" aria-hidden="true"></div>
+      <div class="hero-mockup-frame">
+        <div class="mockup-bar" aria-hidden="true">
+          <div class="mockup-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="mockup-title">NetAndIP — Gestion d'adresses IP</span>
+        </div>
+        <img
+          class="mockup-img"
+          src="assets/screenshot.png"
+          alt="Interface de NetAndIP — mode Simple avec sélection de site et de rôle"
+          width="760" height="490"
+          loading="eager"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BARRE DE CONFIANCE
+════════════════════════════════════════════ -->
+<div class="proof-bar" aria-label="Caractéristiques clés">
+  <div class="container">
+    <ul class="proof-bar-inner" role="list">
+      <li class="proof-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span>Windows <span class="val">10 / 11</span></span>
+      </li>
+      <li class="proof-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Zéro donnée transmise</span>
+      </li>
+      <li class="proof-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Basculement en <span class="val">&lt; 2 s</span></span>
+      </li>
+      <li class="proof-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <span>Fonctionne <span class="val">hors ligne</span></span>
+      </li>
+      <li class="proof-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Multi-<span class="val">sites</span></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FONCTIONNALITÉS
+════════════════════════════════════════════ -->
+<section id="features" class="features" aria-labelledby="features-title">
+  <div class="container">
+    <header class="section-header center">
+      <span class="section-label reveal">Fonctionnalités</span>
+      <h2 id="features-title" class="section-title reveal reveal-delay-1">
+        Tout ce dont vous avez besoin,<br>rien de superflu
+      </h2>
+      <p class="section-sub reveal reveal-delay-2">
+        Conçu pour les techniciens IT, les administrateurs réseau et les équipes terrain qui changent de site plusieurs fois par jour.
+      </p>
+    </header>
+
+    <div class="features-grid" role="list">
+
+      <article class="feature-card reveal" role="listitem">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3>Profils réseau</h3>
+        <p>Sauvegardez autant de configurations réseau que nécessaire. Nommez-les, organisez-les, rappliquez-les en un clic.</p>
+      </article>
+
+      <article class="feature-card reveal reveal-delay-1" role="listitem">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <h3>Mode Simple</h3>
+        <p>Interface épurée pensée pour les utilisateurs non-techniques : choisissez votre site, votre poste, appliquez.</p>
+      </article>
+
+      <article class="feature-card reveal reveal-delay-2" role="listitem">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Mode Expert</h3>
+        <p>Accès direct à tous les paramètres réseau : IP, masque, passerelle, DNS primaire et secondaire.</p>
+      </article>
+
+      <article class="feature-card reveal" role="listitem">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Multi-sites</h3>
+        <p>Organisez vos configurations par lieu (bureau, client, entrepôt) et par rôle (imprimante, bureau, serveur).</p>
+      </article>
+
+      <article class="feature-card reveal reveal-delay-1" role="listitem">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        </div>
+        <h3>Import / Export</h3>
+        <p>Exportez vos profils en JSON, partagez-les avec vos collègues, importez-les sur un nouveau poste.</p>
+      </article>
+
+      <article class="feature-card reveal reveal-delay-2" role="listitem">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Zéro tracking</h3>
+        <p>Aucune donnée personnelle collectée ou transmise. Tout reste sur votre machine. Conforme RGPD.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     COMMENT ÇA MARCHE
+════════════════════════════════════════════ -->
+<section id="how" class="how" aria-labelledby="how-title">
+  <div class="container">
+    <header class="section-header center">
+      <span class="section-label reveal">Guide rapide</span>
+      <h2 id="how-title" class="section-title reveal reveal-delay-1">
+        Opérationnel en <span class="gradient-text">3 étapes</span>
+      </h2>
+      <p class="section-sub reveal reveal-delay-2">
+        Pas de serveur, pas de compte, pas de configuration complexe.
+      </p>
+    </header>
+
+    <div class="steps" role="list">
+      <article class="step-card reveal" role="listitem">
+        <span class="step-num">Étape 01</span>
+        <h3>Configurez vos sites</h3>
+        <p>
+          Ouvrez <code>config.json</code> ou utilisez l'interface Expert pour déclarer vos lieux (bureau, site client, entrepôt) et les rôles associés (poste fixe, imprimante, serveur).
+        </p>
+        <div class="step-visual" aria-label="Exemple de configuration">
+          <span class="hl">"site"</span>: <span class="hl2">"Bureau Paris"</span>,<br>
+          <span class="hl">"role"</span>: <span class="hl2">"Poste standard"</span>,<br>
+          <span class="hl">"ip"</span>: <span class="hl2">"192.168.1.50"</span>
+        </div>
+      </article>
+
+      <article class="step-card reveal reveal-delay-1" role="listitem">
+        <span class="step-num">Étape 02</span>
+        <h3>Sauvegardez vos profils</h3>
+        <p>
+          Dans le mode Simple, sélectionnez votre site et votre poste. NetAndIP pré-remplit l'adresse IP correspondante. Cliquez sur « Enregistrer » pour créer le profil.
+        </p>
+        <div class="step-visual" aria-label="Exemple de profil sauvegardé">
+          <span class="hl">Profil</span> <span class="hl2">créé</span> ✓<br>
+          <span class="hl">Bureau Paris</span> / Poste std<br>
+          <span style="color:#475569">IP : 192.168.1.50/24</span>
+        </div>
+      </article>
+
+      <article class="step-card reveal reveal-delay-2" role="listitem">
+        <span class="step-num">Étape 03</span>
+        <h3>Basculez en un clic</h3>
+        <p>
+          Choisissez un profil dans la liste, cliquez sur « Appliquer ». Windows configure votre interface réseau en moins de 2 secondes. Aucun redémarrage nécessaire.
+        </p>
+        <div class="step-visual" aria-label="Résultat de l'application">
+          <span class="hl2">✓ IP appliquée</span><br>
+          <span style="color:#475569">Interface : Ethernet<br>192.168.1.50/255.255.255.0</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TARIFS
+════════════════════════════════════════════ -->
+<section id="pricing" class="pricing" aria-labelledby="pricing-title">
+  <div class="container">
+    <header class="section-header center">
+      <span class="section-label reveal">Tarifs</span>
+      <h2 id="pricing-title" class="section-title reveal reveal-delay-1">
+        Gratuit pour commencer,<br><span class="gradient-text">Pro</span> pour aller plus loin
+      </h2>
+      <p class="section-sub reveal reveal-delay-2">
+        Vos données ne sont jamais supprimées lors du changement de plan.
+      </p>
+    </header>
+
+    <div class="pricing-grid reveal">
+
+      <!-- Free -->
+      <div class="pricing-card" role="article" aria-label="Plan Gratuit">
+        <div class="pricing-name">Gratuit</div>
+        <div class="pricing-price">0&nbsp;<sup>€</sup></div>
+        <div class="pricing-desc">Pour découvrir NetAndIP et les petites équipes.</div>
+        <div class="pricing-sep"></div>
+        <ul class="pricing-features" role="list">
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Jusqu'à 3 profils réseau
+          </li>
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Mode Simple &amp; Expert
+          </li>
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Sites et rôles illimités
+          </li>
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Mises à jour automatiques
+          </li>
+          <li class="pricing-feat off">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Profils illimités
+          </li>
+          <li class="pricing-feat off">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Support prioritaire
+          </li>
+        </ul>
+        <a href="download.html" class="btn btn-ghost" style="width:100%;justify-content:center;" data-download="pricing-free">
+          Télécharger gratuitement
+        </a>
+      </div>
+
+      <!-- Pro -->
+      <div class="pricing-card featured" role="article" aria-label="Plan Pro">
+        <span class="pricing-tag">Recommandé</span>
+        <div class="pricing-name">Pro</div>
+        <div class="pricing-price" id="pro-price">?&nbsp;<sup>€</sup></div>
+        <div class="pricing-desc">Pour les professionnels et les équipes IT actives.</div>
+        <div class="pricing-sep"></div>
+        <ul class="pricing-features" role="list">
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <strong>Profils illimités</strong>
+          </li>
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Mode Simple &amp; Expert
+          </li>
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Sites et rôles illimités
+          </li>
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Mises à jour automatiques
+          </li>
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Licence offline (sans serveur)
+          </li>
+          <li class="pricing-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Support par email prioritaire
+          </li>
+        </ul>
+        <a href="mailto:banguiauandy@gmail.com?subject=NetAndIP%20Pro%20-%20Demande%20de%20tarif" class="btn btn-primary" style="width:100%;justify-content:center;">
+          Contacter pour le tarif
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FAQ
+════════════════════════════════════════════ -->
+<section id="faq" class="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="section-header center">
+      <span class="section-label reveal">FAQ</span>
+      <h2 id="faq-title" class="section-title reveal reveal-delay-1">Questions fréquentes</h2>
+    </header>
+
+    <dl class="faq-list reveal">
+
+      <div class="faq-item">
+        <dt><button class="faq-question" aria-expanded="false">
+          NetAndIP est-il vraiment gratuit ?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button></dt>
+        <dd class="faq-answer"><p>Oui. La version gratuite est entièrement fonctionnelle avec jusqu'à 3 profils réseau. Aucune inscription, aucune carte bancaire, aucune limite de durée.</p></dd>
+      </div>
+
+      <div class="faq-item">
+        <dt><button class="faq-question" aria-expanded="false">
+          Mes données sont-elles envoyées quelque part ?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button></dt>
+        <dd class="faq-answer"><p>Non. Toutes vos configurations restent sur votre machine. NetAndIP ne contacte internet que pour vérifier les mises à jour (1 fois par jour, désactivable). Aucune donnée personnelle n'est collectée. Voir notre <a href="privacy.html">politique de confidentialité</a>.</p></dd>
+      </div>
+
+      <div class="faq-item">
+        <dt><button class="faq-question" aria-expanded="false">
+          Faut-il les droits administrateur ?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button></dt>
+        <dd class="faq-answer"><p>Oui, uniquement pour appliquer une configuration réseau (l'outil <code>netsh</code> de Windows l'exige). La consultation et la création de profils fonctionnent sans droits élevés. Windows vous demandera une élévation au moment de l'application.</p></dd>
+      </div>
+
+      <div class="faq-item">
+        <dt><button class="faq-question" aria-expanded="false">
+          Windows SmartScreen bloque le téléchargement, est-ce normal ?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button></dt>
+        <dd class="faq-answer"><p>Oui, c'est normal pour un logiciel indépendant distribué sans certificat de signature coûteux. Cliquez sur « Informations complémentaires » puis « Exécuter quand même ». Le code source est disponible sur <a href="https://github.com/AndyBanguiau/netandip" target="_blank" rel="noopener">GitHub</a> pour votre tranquillité.</p></dd>
+      </div>
+
+      <div class="faq-item">
+        <dt><button class="faq-question" aria-expanded="false">
+          Comment mettre à jour NetAndIP ?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button></dt>
+        <dd class="faq-answer"><p>NetAndIP vérifie automatiquement les mises à jour une fois par jour. Vous verrez une notification dans l'application. Vous pouvez aussi vérifier manuellement via <strong>À propos → Vérifier les mises à jour</strong>. Vos profils et configurations sont conservés lors de la mise à jour.</p></dd>
+      </div>
+
+      <div class="faq-item">
+        <dt><button class="faq-question" aria-expanded="false">
+          Puis-je partager mes configurations avec mon équipe ?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button></dt>
+        <dd class="faq-answer"><p>Oui. Exportez votre fichier <code>config.json</code> (sites et rôles) et <code>profiles.json</code> (profils réseau), puis importez-les sur les machines de vos collègues. La version Pro permet également de partager directement depuis l'interface.</p></dd>
+      </div>
+
+    </dl>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TÉLÉCHARGEMENT
+════════════════════════════════════════════ -->
+<section class="download-section" aria-labelledby="download-title">
+  <div class="container">
+    <div class="download-card reveal">
+      <h2 id="download-title">Prêt à simplifier votre réseau ?</h2>
+      <p>Téléchargez NetAndIP gratuitement. Aucune inscription requise.</p>
+      <a
+        href="https://github.com/AndyBanguiau/netandip/releases/latest/download/NetAndIP-Setup-3.0.0-x64.exe"
+        class="btn btn-primary btn-lg"
+        data-download="footer-cta"
+        rel="noopener"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Télécharger NetAndIP v3.0.0
+      </a>
+      <div class="download-meta">
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+          Windows 10 / 11 — x64
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          ~23 Mo (installateur)
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Aucune donnée collectée
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <img src="assets/logo.png" alt="Logo NetAndIP" width="26" height="26">
+          <span>NetAndIP</span>
+        </div>
+        <p>Gestionnaire de configuration réseau Windows. Gratuit, sans inscription, sans données collectées.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Produit">
+        <h4>Produit</h4>
+        <ul role="list">
+          <li><a href="#features">Fonctionnalités</a></li>
+          <li><a href="#how">Comment ça marche</a></li>
+          <li><a href="#pricing">Tarifs</a></li>
+          <li><a href="download.html">Télécharger</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Aide">
+        <h4>Aide</h4>
+        <ul role="list">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:banguiauandy@gmail.com">Support</a></li>
+          <li><a href="https://github.com/AndyBanguiau/netandip" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Légal">
+        <h4>Légal</h4>
+        <ul role="list">
+          <li><a href="privacy.html">Confidentialité</a></li>
+          <li><a href="legal.html">Mentions légales</a></li>
+          <li><a href="terms.html">CGU</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 NetAndIP. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="legal.html">Mentions légales</a>
+        <a href="terms.html">CGU</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

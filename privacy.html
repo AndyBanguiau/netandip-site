@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de confidentialité — NetAndIP</title>
+  <meta name="description" content="Politique de confidentialité de NetAndIP. Aucune donnée personnelle collectée. Tout reste sur votre machine.">
+  <link rel="canonical" href="https://andybanguiau.github.io/netandip-site/privacy.html">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .legal-page { padding: 7rem 0 5rem; }
+    .legal-page .container { max-width: 760px; }
+    .legal-page h1 { font-size: 2rem; margin-bottom: .5rem; }
+    .legal-date { font-size: .85rem; color: var(--fg-muted); margin-bottom: 3rem; }
+    .legal-section { margin-bottom: 2.5rem; }
+    .legal-section h2 { font-size: 1.1rem; font-weight: 700; color: var(--fg); margin-bottom: .75rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
+    .legal-section p, .legal-section li { font-size: .95rem; color: var(--fg-muted); line-height: 1.7; }
+    .legal-section ul, .legal-section ol { padding-left: 1.4rem; margin: .5rem 0; }
+    .legal-section li { margin-bottom: .35rem; }
+    code { background: rgba(99,102,241,.1); color: var(--primary-h); padding: .1rem .35rem; border-radius: .25rem; font-size: .875em; }
+    .legal-back { display: inline-flex; align-items: center; gap: .4rem; color: var(--primary); font-size: .9rem; margin-bottom: 2.5rem; text-decoration: none; }
+    .legal-back:hover { color: var(--primary-h); }
+  </style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="NetAndIP — Accueil">
+      <img src="assets/logo.png" alt="" width="28" height="28">
+      <span>NetAndIP</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html#features">Fonctionnalités</a></li>
+      <li><a href="index.html#pricing">Tarifs</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="download.html" class="btn btn-primary nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Télécharger
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div class="legal-page">
+    <div class="container">
+      <a href="index.html" class="legal-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        Retour à l'accueil
+      </a>
+
+      <h1>Politique de confidentialité</h1>
+      <p class="legal-date">Dernière mise à jour : 16 juin 2026</p>
+
+      <div class="legal-section">
+        <h2>1. Données collectées</h2>
+        <p>
+          NetAndIP <strong>ne collecte aucune donnée personnelle</strong>.
+          L'application fonctionne entièrement en local sur votre machine Windows.
+          Aucune information n'est transmise à des serveurs tiers dans le cadre de son utilisation normale.
+        </p>
+      </div>
+
+      <div class="legal-section">
+        <h2>2. Données stockées localement</h2>
+        <p>Les fichiers suivants sont créés sur votre poste uniquement :</p>
+        <ul>
+          <li><code>config.json</code> — sites, rôles et adresses IP de votre organisation</li>
+          <li><code>profiles.json</code> — configurations réseau sauvegardées</li>
+          <li><code>settings.json</code> — préférences d'interface (mode Simple/Expert)</li>
+          <li><code>license.json</code> — clé de licence Pro (si activée)</li>
+        </ul>
+        <p>Ces fichiers restent exclusivement sur votre machine. Ils ne sont jamais lus, transmis ou analysés par l'éditeur.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>3. Vérification des mises à jour</h2>
+        <p>
+          Si la vérification des mises à jour est activée (option activée par défaut, désactivable dans les paramètres),
+          l'application contacte l'API publique GitHub Releases une fois par jour pour vérifier si une nouvelle version est disponible.
+        </p>
+        <ul>
+          <li>URL consultée : <code>https://api.github.com/repos/AndyBanguiau/netandip/releases/latest</code></li>
+          <li>Seule la version courante de l'application est incluse dans le User-Agent HTTP standard.</li>
+          <li>Aucune donnée personnelle, aucun identifiant unique n'est inclus dans cette requête.</li>
+          <li>Cette fonctionnalité peut être désactivée dans <strong>Paramètres → Vérifier les mises à jour</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>4. Cookies et traceurs</h2>
+        <p>
+          NetAndIP (l'application) n'utilise aucun cookie, aucun traceur, aucune balise de suivi.
+          Ce site web statique n'utilise pas non plus de cookies analytiques ou publicitaires.
+        </p>
+      </div>
+
+      <div class="legal-section">
+        <h2>5. Droits des personnes (RGPD)</h2>
+        <p>
+          Conformément au Règlement (UE) 2016/679 (RGPD), toute personne dispose de droits sur ses données personnelles.
+          Étant donné qu'aucune donnée personnelle n'est collectée par l'éditeur, il n'existe pas de traitement
+          de données personnelles au sens du RGPD.
+        </p>
+        <p>
+          Vos données locales (fichiers <code>.json</code>) vous appartiennent intégralement. Vous pouvez les consulter,
+          les modifier ou les supprimer à tout moment en accédant aux fichiers dans le dossier d'installation.
+        </p>
+      </div>
+
+      <div class="legal-section">
+        <h2>6. Sécurité de la licence Pro</h2>
+        <p>
+          Si vous activez une licence Pro, la clé de licence est stockée dans <code>license.json</code> sur votre machine.
+          Elle contient votre adresse e-mail, le niveau de licence, la date d'expiration et une signature cryptographique.
+          Ce fichier n'est jamais transmis automatiquement. La vérification de la licence est effectuée entièrement hors-ligne.
+        </p>
+      </div>
+
+      <div class="legal-section">
+        <h2>7. Contact</h2>
+        <p>
+          Pour toute question relative à cette politique ou à la protection de vos données :
+          <a href="mailto:banguiauandy@gmail.com" style="color:var(--primary);">banguiauandy@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <p>&copy; 2026 NetAndIP. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="privacy.html" aria-current="page">Confidentialité</a>
+        <a href="legal.html">Mentions légales</a>
+        <a href="terms.html">CGU</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

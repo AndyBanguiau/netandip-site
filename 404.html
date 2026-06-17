@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable — NetAndIP</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-page {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+    }
+    .error-code {
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: .75rem;
+    }
+    .error-sub {
+      font-size: 1rem;
+      color: var(--fg-muted);
+      margin-bottom: 2.5rem;
+      max-width: 380px;
+    }
+    .error-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="NetAndIP — Accueil">
+      <img src="assets/logo.png" alt="" width="28" height="28">
+      <span>NetAndIP</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div class="error-page">
+    <div>
+      <div class="error-code" aria-label="Erreur 404">404</div>
+      <h1 class="error-title">Page introuvable</h1>
+      <p class="error-sub">Cette page n'existe pas ou a été déplacée. Revenez à l'accueil pour continuer.</p>
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary btn-lg">Retour à l'accueil</a>
+        <a href="download.html" class="btn btn-ghost btn-lg">Télécharger</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
