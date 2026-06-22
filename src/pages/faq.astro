@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+const BASE = import.meta.env.BASE_URL;
+const SITE = 'https://andybanguiau.github.io/netandip-site';
+
+const faqs = [
+  {
+    cat: "Général",
+    items: [
+      { q: "NetAndIP est-il vraiment gratuit ?", a: "Oui. La version gratuite est entièrement fonctionnelle avec jusqu'à 3 profils réseau. Aucune inscription, aucune carte bancaire, aucune limite de durée. Pas de publicité non plus." },
+      { q: "Mes données sont-elles envoyées quelque part ?", a: "Non. Toutes vos configurations restent sur votre machine dans des fichiers JSON locaux. NetAndIP ne contacte internet que pour vérifier les mises à jour (une fois par jour, désactivable dans les Paramètres). Aucune donnée personnelle n'est collectée." },
+      { q: "NetAndIP fonctionne-t-il hors ligne ?", a: "Oui, entièrement. La vérification des mises à jour est la seule fonctionnalité qui nécessite une connexion internet, et elle peut être désactivée dans les Paramètres." },
+      { q: "Quelle est la différence entre la version Gratuite et la version Pro ?", a: "La version gratuite vous limite à 3 profils réseau sauvegardés. La version Pro (5,99 €/mois ou 49 €/an) supprime cette limite et ajoute un support prioritaire, une licence offline et des fonctionnalités de partage avancé." },
+    ]
+  },
+  {
+    cat: "Installation",
+    items: [
+      { q: "Windows SmartScreen bloque l'installation, est-ce normal ?", a: "Oui. C'est normal pour un logiciel indépendant distribué sans certificat de signature de code (plusieurs centaines d'euros par an). Cliquez sur « Informations complémentaires » puis « Exécuter quand même ». Le code source de NetAndIP est disponible sur GitHub." },
+      { q: "Mon antivirus signale NetAndIP comme suspect", a: "Les faux positifs sont courants pour les logiciels indépendants non signés. NetAndIP ne contient aucun code malveillant. Vous pouvez analyser le fichier sur VirusTotal ou consulter le code source sur GitHub." },
+      { q: "Quelle est la configuration requise ?", a: "Windows 10 ou Windows 11 en version 64-bit (x64). Environ 50 Mo d'espace disque. Droits administrateur pour appliquer des configurations réseau." },
+    ]
+  },
+  {
+    cat: "Utilisation",
+    items: [
+      { q: "Faut-il les droits administrateur ?", a: "Oui, uniquement pour appliquer une configuration réseau. La commande netsh de Windows exige des droits élevés pour modifier l'IP. La consultation et la création de profils fonctionnent sans élévation." },
+      { q: "Puis-je configurer le Wi-Fi avec NetAndIP ?", a: "Oui. NetAndIP liste toutes les interfaces réseau disponibles : Ethernet, Wi-Fi et autres adaptateurs. Sélectionnez l'interface souhaitée dans la liste." },
+      { q: "Comment partager mes configurations avec mon équipe ?", a: "Exportez votre config.json (sites et rôles) et profiles.json (profils réseau) via Fichier → Exporter, puis importez-les sur les machines de vos collègues via Fichier → Importer." },
+      { q: "Puis-je utiliser NetAndIP sans installation ?", a: "Oui. Téléchargez la version Portable (fichier .exe unique). Copiez-la sur une clé USB ou dans un dossier. NetAndIP crée ses fichiers de configuration dans le même dossier que l'exécutable." },
+    ]
+  },
+  {
+    cat: "Mises à jour & Licences",
+    items: [
+      { q: "Comment mettre à jour NetAndIP ?", a: "NetAndIP vérifie automatiquement les mises à jour une fois par jour. Vous verrez une notification dans l'application. Vous pouvez aussi vérifier manuellement via À propos → Vérifier les mises à jour. Vos profils sont conservés." },
+      { q: "Comment obtenir la licence Pro ?", a: "Contactez-nous par email à banguiauandy@gmail.com avec l'objet « Licence Pro NetAndIP ». Vous recevrez un fichier de licence à placer dans le dossier de l'application." },
+      { q: "La licence Pro est-elle valable sur plusieurs machines ?", a: "Non, la licence Pro est nominative pour un utilisateur sur une machine. Pour plusieurs postes, contactez-nous pour un tarif équipe ou une licence Entreprise." },
+    ]
+  },
+];
+---
+<Layout
+  title="FAQ — Foire aux questions NetAndIP"
+  description="Toutes les réponses aux questions fréquentes sur NetAndIP : installation, utilisation, licences, mise à jour et dépannage."
+  canonical={`${SITE}/faq`}
+>
+  <main>
+    <section class="page-hero">
+      <div class="hero-orb hero-orb-1" aria-hidden="true" style="width:500px;height:400px;top:-150px;left:50%;transform:translateX(-50%)"></div>
+      <div class="container" style="position:relative;z-index:2">
+        <span class="section-label reveal">FAQ</span>
+        <h1 class="section-title reveal reveal-delay-1" style="max-width:640px;margin:16px auto 16px">
+          Questions fréquentes
+        </h1>
+        <p class="section-sub reveal reveal-delay-2" style="margin:0 auto">
+          Vous ne trouvez pas votre réponse ? <a href={`${BASE}contact`} style="color:var(--primary-l)">Contactez le support</a>.
+        </p>
+      </div>
+    </section>
+
+    <div style="max-width:800px;margin:0 auto;padding:0 24px 80px">
+      {faqs.map((section, si) => (
+        <div style="margin-bottom:48px">
+          <h2 class={`reveal${si > 0 ? ' reveal-delay-1' : ''}`} style="font-size:20px;font-weight:700;color:var(--primary-l);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)">{section.cat}</h2>
+          <div class="faq-list" style="max-width:none">
+            {section.items.map(item => (
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-question" aria-expanded="false">
+                    {item.q}
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </button>
+                </dt>
+                <dd class="faq-answer"><p>{item.a}</p></dd>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div class="download-card reveal" style="padding:48px 40px;text-align:center">
+        <h2 style="font-size:24px;margin-bottom:12px">Toujours bloqué ?</h2>
+        <p style="margin-bottom:24px">Notre équipe est disponible pour vous aider.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a href={`${BASE}contact`} class="btn btn-primary">Contacter le support</a>
+          <a href={`${BASE}docs`} class="btn btn-ghost">Lire la documentation</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

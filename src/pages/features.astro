@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+const BASE = import.meta.env.BASE_URL;
+const SITE = 'https://andybanguiau.github.io/netandip-site';
+---
+<Layout
+  title="Fonctionnalités — NetAndIP"
+  description="Découvrez toutes les fonctionnalités de NetAndIP : profils réseau, mode simple et expert, multi-sites, import/export, et bien plus."
+  canonical={`${SITE}/features`}
+>
+  <main>
+    <section class="page-hero">
+      <div class="hero-orb hero-orb-1" aria-hidden="true" style="width:600px;height:500px;top:-200px;left:50%;transform:translateX(-50%)"></div>
+      <div class="container" style="position:relative;z-index:2">
+        <span class="section-label reveal">Fonctionnalités</span>
+        <h1 class="section-title reveal reveal-delay-1" style="max-width:700px;margin:16px auto 16px">
+          Tout ce dont vous avez besoin,<br><span class="gradient-text">rien de superflu</span>
+        </h1>
+        <p class="section-sub reveal reveal-delay-2" style="margin:0 auto">
+          NetAndIP est conçu pour les professionnels IT qui changent de configuration réseau plusieurs fois par jour.
+        </p>
+        <div class="reveal reveal-delay-3" style="margin-top:32px">
+          <a href={`${BASE}download`} class="btn btn-primary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Télécharger gratuitement
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature blocks -->
+    <div style="padding:0 0 100px">
+
+      <!-- Block 1: Profils réseau -->
+      <section style="padding:80px 0;border-top:1px solid var(--border)">
+        <div class="container">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+            <div class="reveal-left">
+              <span class="section-label">Profils réseau</span>
+              <h2 class="section-title" style="font-size:32px;margin:16px 0 16px">Sauvegardez et réappliquez<br>en un seul clic</h2>
+              <p style="color:var(--text-2);line-height:1.8;margin-bottom:20px">Créez autant de profils réseau que nécessaire : chaque profil stocke l'adresse IP, le masque de sous-réseau, la passerelle et les serveurs DNS. Nommez-les, organisez-les par site ou client, et réappliquez-les instantanément.</p>
+              <ul style="display:flex;flex-direction:column;gap:10px">
+                {['3 profils en version gratuite, illimité en Pro', 'Noms personnalisés par profil', 'Visible d\'un coup d\'œil dans la liste', 'Sauvegarde automatique après application'].map(f => (
+                  <li style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--text-2)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--green);flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="reveal-right">
+              <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden">
+                <div style="padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px">
+                  <div style="display:flex;gap:5px"><span style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></span><span style="width:10px;height:10px;border-radius:50%;background:#ffbd2e"></span><span style="width:10px;height:10px;border-radius:50%;background:#28ca41"></span></div>
+                  <span style="font-size:12px;color:var(--text-3);flex:1;text-align:center">Mes profils réseau</span>
+                </div>
+                <div style="padding:20px;display:flex;flex-direction:column;gap:8px">
+                  {[
+                    { name: 'Bureau Paris', ip: '192.168.1.50', active: true },
+                    { name: 'Client — Entrepôt Lyon', ip: '10.0.2.45', active: false },
+                    { name: 'Domicile', ip: '192.168.0.12', active: false },
+                  ].map(p => (
+                    <div style={`display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:var(--r);border:1px solid ${p.active ? 'var(--border-p)' : 'var(--border)'};background:${p.active ? 'rgba(99,102,241,.08)' : 'var(--bg-3)'}`}>
+                      <div>
+                        <div style={`font-size:13.5px;font-weight:600;${p.active ? 'color:var(--primary-l)' : ''}`}>{p.name}</div>
+                        <div style="font-size:12px;color:var(--text-3)">{p.ip}</div>
+                      </div>
+                      {p.active ? <span style="font-size:11px;background:rgba(74,222,128,.15);color:var(--green);padding:3px 8px;border-radius:999px;font-weight:600">Actif</span> : <span style="font-size:11px;color:var(--text-3)">Appliquer →</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Block 2: Mode Simple -->
+      <section style="padding:80px 0;border-top:1px solid var(--border);background:var(--bg-2)">
+        <div class="container">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+            <div class="reveal-right" style="order:2">
+              <span class="section-label">Mode Simple</span>
+              <h2 class="section-title" style="font-size:32px;margin:16px 0 16px">Idéal pour les utilisateurs<br>non-techniques</h2>
+              <p style="color:var(--text-2);line-height:1.8;margin-bottom:20px">Le Mode Simple permet à n'importe quel collaborateur de changer de profil réseau sans comprendre la configuration IP. L'administrateur configure les sites et rôles une fois, les utilisateurs choisissent simplement leur emplacement.</p>
+              <ul style="display:flex;flex-direction:column;gap:10px">
+                {['Sélection site + rôle en 2 clics', 'Affichage IP automatique', 'Aucune connaissance technique requise', 'Idéal pour les équipes terrain'].map(f => (
+                  <li style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--text-2)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--green);flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="reveal-left" style="order:1">
+              <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden">
+                <div style="padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px">
+                  <div style="display:flex;gap:5px"><span style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></span><span style="width:10px;height:10px;border-radius:50%;background:#ffbd2e"></span><span style="width:10px;height:10px;border-radius:50%;background:#28ca41"></span></div>
+                  <span style="font-size:12px;color:var(--text-3);flex:1;text-align:center">Mode Simple</span>
+                </div>
+                <div style="padding:24px;display:flex;flex-direction:column;gap:16px">
+                  <div>
+                    <label style="font-size:11px;color:var(--text-3);font-weight:600;letter-spacing:.06em;text-transform:uppercase">Site</label>
+                    <div style="margin-top:6px;padding:10px 14px;border:1px solid var(--border-p);border-radius:var(--r);font-size:14px;background:rgba(99,102,241,.05)">Bureau Paris ▾</div>
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--text-3);font-weight:600;letter-spacing:.06em;text-transform:uppercase">Rôle</label>
+                    <div style="margin-top:6px;padding:10px 14px;border:1px solid var(--border);border-radius:var(--r);font-size:14px;">Poste standard ▾</div>
+                  </div>
+                  <div style="background:var(--bg-2);border-radius:var(--r);padding:12px 14px">
+                    <div style="font-size:11px;color:var(--text-3);margin-bottom:4px">IP détectée automatiquement</div>
+                    <div style="font-size:18px;font-weight:700;color:var(--primary-l)">192.168.1.50</div>
+                  </div>
+                  <button style="width:100%;padding:12px;background:var(--primary);color:white;border-radius:var(--r);font-weight:600;font-size:14px;cursor:default">Appliquer la configuration</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Block 3: Multi-sites + Import/Export -->
+      <section style="padding:80px 0;border-top:1px solid var(--border)">
+        <div class="container">
+          <div class="features-grid" role="list">
+            {[
+              {
+                icon: `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`,
+                title: 'Multi-sites illimités',
+                desc: 'Organisez vos configurations par lieu géographique (bureau, site client, entrepôt, domicile) et par rôle (poste, imprimante, serveur, caisse). Aucune limite sur le nombre de sites.',
+              },
+              {
+                icon: `<polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>`,
+                title: 'Import / Export JSON',
+                desc: 'Exportez vos profils et configurations en JSON portable. Partagez-les avec vos collègues, déployez-les sur de nouveaux postes ou sauvegardez-les comme backup.',
+              },
+              {
+                icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+                title: 'Zéro tracking — RGPD',
+                desc: 'Aucune donnée personnelle collectée. Aucun serveur tiers. Tout reste sur votre machine. NetAndIP est 100% conforme au RGPD et fonctionne intégralement hors ligne.',
+              },
+              {
+                icon: `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
+                title: 'Basculement en < 2 secondes',
+                desc: 'L\'application de la configuration réseau prend moins de 2 secondes. Pas de redémarrage requis. Continuez à travailler immédiatement après le changement de profil.',
+              },
+              {
+                icon: `<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>`,
+                title: 'Windows 10 & 11',
+                desc: 'Optimisé pour Windows 10 et Windows 11 (64-bit). Compatible avec tous les adaptateurs réseau : Ethernet, Wi-Fi, et adaptateurs virtuels (VPN, Hyper-V, etc.).',
+              },
+              {
+                icon: `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
+                title: 'Mises à jour automatiques',
+                desc: 'NetAndIP vérifie une fois par jour l\'existence d\'une nouvelle version. Une notification discrète vous informe. Vos profils et configurations sont intégralement conservés.',
+              },
+            ].map((f, i) => (
+              <article class={`feature-card reveal${i % 3 !== 0 ? ` reveal-delay-${i % 3}` : ''}`} role="listitem">
+                <div class="feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={f.icon} />
+                </div>
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- CTA -->
+    <section class="download-section" style="padding:0 0 80px">
+      <div class="container">
+        <div class="download-card reveal">
+          <h2>Prêt à essayer ?</h2>
+          <p>Téléchargez NetAndIP gratuitement. Aucune inscription requise.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+            <a href={`${BASE}download`} class="btn btn-primary btn-lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger gratuitement
+            </a>
+            <a href={`${BASE}#pricing`} class="btn btn-ghost btn-lg">Voir les tarifs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+@media (max-width: 768px) {
+  section > .container > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  div[style*="order:2"] { order: 0 !important; }
+  div[style*="order:1"] { order: 0 !important; }
+}
+</style>

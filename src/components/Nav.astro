@@ -5,13 +5,14 @@ const BASE = import.meta.env.BASE_URL;
   <div class="nav-inner">
     <a href={BASE} class="nav-logo" aria-label="NetAndIP — Accueil">
       <img src={`${BASE}logo.png`} alt="Logo NetAndIP" width="28" height="28">
-      <span>NetAndIP</span>
+      <span class="nav-logo-text">NetAndIP</span>
     </a>
     <ul class="nav-links" role="list">
-      <li><a href={`${BASE}#features`}>Fonctionnalités</a></li>
+      <li><a href={`${BASE}features`}>Fonctionnalités</a></li>
       <li><a href={`${BASE}#how`}>Comment ça marche</a></li>
       <li><a href={`${BASE}#pricing`}>Tarifs</a></li>
       <li><a href={`${BASE}docs`}>Documentation</a></li>
+      <li><a href={`${BASE}support`}>Support</a></li>
     </ul>
     <a href={`${BASE}download`} class="btn btn-primary nav-cta">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -22,11 +23,12 @@ const BASE = import.meta.env.BASE_URL;
     </button>
   </div>
 </nav>
-<div class="nav-mobile" role="dialog" aria-label="Menu mobile">
+<div class="nav-mobile" role="dialog" aria-label="Menu mobile" aria-modal="true">
   <button class="nav-mobile-close" aria-label="Fermer le menu">&times;</button>
-  <a href={`${BASE}#features`}>Fonctionnalités</a>
+  <a href={`${BASE}features`}>Fonctionnalités</a>
   <a href={`${BASE}#how`}>Comment ça marche</a>
   <a href={`${BASE}#pricing`}>Tarifs</a>
   <a href={`${BASE}docs`}>Documentation</a>
+  <a href={`${BASE}support`}>Support</a>
   <a href={`${BASE}download`} class="btn btn-primary btn-lg">Télécharger gratuitement</a>
 </div>

@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+const BASE = import.meta.env.BASE_URL;
+const SITE = 'https://andybanguiau.github.io/netandip-site';
+---
+<Layout
+  title="Politique des cookies — NetAndIP"
+  description="Politique d'utilisation des cookies sur le site NetAndIP."
+  canonical={`${SITE}/cookies`}
+>
+  <main>
+    <div class="legal-page">
+      <div class="legal-banner" role="note">
+        ⚠️ Ce document est fourni à titre indicatif et doit être validé par un professionnel du droit avant toute publication officielle.
+      </div>
+      <div class="legal-content">
+        <h1>Politique des cookies</h1>
+        <p class="updated">Dernière mise à jour : juin 2026</p>
+
+        <h2>1. Qu'est-ce qu'un cookie ?</h2>
+        <p>Un cookie est un petit fichier texte déposé sur votre appareil par un site web lors de votre visite. Il permet au site de mémoriser certaines informations vous concernant, comme vos préférences de navigation.</p>
+
+        <h2>2. Utilisation des cookies sur ce site</h2>
+        <p>Le site <strong>andybanguiau.github.io/netandip-site</strong> est un site statique hébergé sur GitHub Pages. <strong>Nous n'utilisons aucun cookie de tracking, de publicité ou d'analyse comportementale.</strong></p>
+
+        <p>GitHub Pages (l'hébergeur) peut déposer des cookies techniques nécessaires au fonctionnement de l'infrastructure d'hébergement. Ces cookies sont hors de notre contrôle direct. Consultez la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">politique de confidentialité de GitHub</a> pour plus d'informations.</p>
+
+        <h2>3. Cookies tiers</h2>
+        <p>Ce site utilise la police Google Fonts (Inter). Google peut déposer des cookies lors du chargement des polices. Ces cookies relèvent de la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité de Google</a>.</p>
+        <p>Aucun autre service tiers n'est intégré sur ce site.</p>
+
+        <h2>4. L'application NetAndIP</h2>
+        <p>L'application NetAndIP (logiciel Windows) n'utilise aucun cookie. Toutes les données sont stockées localement sur votre machine dans des fichiers JSON. Voir notre <a href={`${BASE}privacy`}>politique de confidentialité</a> pour plus de détails.</p>
+
+        <h2>5. Gestion des cookies</h2>
+        <p>Vous pouvez configurer votre navigateur pour refuser les cookies ou être alerté lorsqu'un cookie est déposé. Consultez l'aide de votre navigateur :</p>
+        <ul>
+          <li>Chrome : Paramètres → Confidentialité et sécurité → Cookies</li>
+          <li>Firefox : Paramètres → Vie privée et sécurité → Cookies</li>
+          <li>Edge : Paramètres → Confidentialité, recherche et services → Cookies</li>
+          <li>Safari : Préférences → Confidentialité → Cookies</li>
+        </ul>
+
+        <h2>6. Contact</h2>
+        <p>Pour toute question relative à l'utilisation des cookies sur ce site, contactez-nous à <a href="mailto:banguiauandy@gmail.com">banguiauandy@gmail.com</a>.</p>
+      </div>
+    </div>
+  </main>
+</Layout>

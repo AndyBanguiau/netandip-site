@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+const BASE = import.meta.env.BASE_URL;
+const SITE = 'https://andybanguiau.github.io/netandip-site';
+---
+<Layout
+  title="Support — NetAndIP"
+  description="Centre d'aide NetAndIP : documentation, FAQ, guides de dépannage et contact du support technique."
+  canonical={`${SITE}/support`}
+>
+  <main>
+    <section class="page-hero">
+      <div class="hero-orb hero-orb-1" aria-hidden="true" style="width:500px;height:400px;top:-150px;left:50%;transform:translateX(-50%)"></div>
+      <div class="container" style="position:relative;z-index:2">
+        <span class="section-label reveal">Support</span>
+        <h1 class="section-title reveal reveal-delay-1" style="max-width:640px;margin:16px auto 16px">
+          Centre d'aide NetAndIP
+        </h1>
+        <p class="section-sub reveal reveal-delay-2" style="margin:0 auto">
+          Trouvez rapidement la réponse à votre question ou contactez notre équipe.
+        </p>
+      </div>
+    </section>
+
+    <div style="max-width:900px;margin:0 auto;padding:0 24px 80px">
+
+      <!-- Resources -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px">
+        <a href={`${BASE}docs`} class="contact-card reveal" style="text-decoration:none">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3>Documentation</h3>
+          <p>Guides d'installation, d'utilisation et références complètes.</p>
+        </a>
+        <a href={`${BASE}faq`} class="contact-card reveal reveal-delay-1" style="text-decoration:none">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h3>FAQ</h3>
+          <p>Réponses aux questions les plus fréquemment posées.</p>
+        </a>
+        <a href={`${BASE}docs/changelog`} class="contact-card reveal reveal-delay-2" style="text-decoration:none">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Changelog</h3>
+          <p>Historique des versions et notes de mise à jour.</p>
+        </a>
+      </div>
+
+      <!-- Common issues -->
+      <h2 class="section-title reveal" style="font-size:24px;margin-bottom:24px">Problèmes courants</h2>
+
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:48px">
+        {[
+          { title: "SmartScreen bloque l'installation", sol: "Cliquez sur « Informations complémentaires » puis « Exécuter quand même ». C'est normal pour un logiciel indépendant non signé par un certificat payant." },
+          { title: "La configuration réseau ne s'applique pas", sol: "Vérifiez que NetAndIP est lancé en tant qu'administrateur (clic droit → Exécuter en tant qu'administrateur). La commande netsh utilisée exige des droits élevés." },
+          { title: "Je ne retrouve plus mes profils après réinstallation", sol: "Les profils sont dans profiles.json dans le dossier d'installation (ou à côté de l'exécutable pour la version portable). Sauvegardez ce fichier avant de désinstaller." },
+          { title: "La vérification de mises à jour échoue", sol: "Désactivez temporairement votre antivirus ou ajoutez NetAndIP en exception. Vous pouvez aussi désactiver la vérification auto dans les Paramètres de l'application." },
+          { title: "NetAndIP ne voit pas mon interface Wi-Fi", sol: "Appuyez sur F5 pour actualiser la liste des interfaces. Vérifiez que l'adaptateur Wi-Fi est activé dans le Gestionnaire de périphériques Windows." },
+        ].map((item, i) => (
+          <div class={`faq-item reveal${i % 2 === 1 ? ' reveal-delay-1' : ''}`}>
+            <button class="faq-question" aria-expanded="false">
+              {item.title}
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="faq-answer"><p>{item.sol}</p></div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Contact -->
+      <div class="download-card reveal" style="padding:48px 40px">
+        <h2 style="font-size:26px;margin-bottom:12px">Vous n'avez pas trouvé la réponse ?</h2>
+        <p style="margin-bottom:24px">Notre équipe répond sous 24–48h (prioritaire pour les clients Pro & Entreprise).</p>
+        <a href={`${BASE}contact`} class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contacter le support
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

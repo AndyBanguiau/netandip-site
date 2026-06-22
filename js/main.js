@@ -1,5 +1,5 @@
 /* NetAndIP — main.js */
-'use strict';
+import { animate, inView, scroll } from 'framer-motion/dom';
 
 /* ── Navbar scroll ── */
 const nav = document.querySelector('.nav');

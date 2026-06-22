@@ -27,7 +27,7 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <meta name="description" content={description}>
-  <meta name="author" content="NetAndIP">
+  <meta name="author" content="Andy Banguiau — NetAndIP">
   <link rel="canonical" href={canonical}>
   <link rel="icon" href={`${BASE}logo.png`} type="image/png">
 
@@ -37,6 +37,7 @@ const {
   <meta property="og:description" content={description}>
   <meta property="og:image" content={ogImage}>
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="NetAndIP">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content={title}>
@@ -52,50 +53,101 @@ const {
   <Footer />
 
   <script>
+    /* Navbar scroll */
     const nav = document.querySelector('.nav');
-    window.addEventListener('scroll', () => {
-      nav?.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
+    const onScroll = () => nav?.classList.toggle('scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-    const burger = document.querySelector('.nav-burger');
-    const mobileNav = document.querySelector('.nav-mobile');
+    /* Mobile nav */
+    const burger = document.querySelector('.nav-burger') as HTMLButtonElement | null;
+    const mobileNav = document.querySelector('.nav-mobile') as HTMLElement | null;
     const mobileClose = document.querySelector('.nav-mobile-close');
-    burger?.addEventListener('click', () => mobileNav?.classList.add('open'));
-    mobileClose?.addEventListener('click', () => mobileNav?.classList.remove('open'));
-    mobileNav?.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => mobileNav?.classList.remove('open'))
-    );
+    burger?.addEventListener('click', () => {
+      mobileNav?.classList.add('open');
+      burger.setAttribute('aria-expanded', 'true');
+    });
+    const closeMobile = () => {
+      mobileNav?.classList.remove('open');
+      burger?.setAttribute('aria-expanded', 'false');
+    };
+    mobileClose?.addEventListener('click', closeMobile);
+    mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });
 
-    const revealObserver = new IntersectionObserver((entries) => {
+    /* Scroll reveal — staggered for children */
+    const revealObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('visible');
-          revealObserver.unobserve(e.target);
+          revealObs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
 
+    const additionalAnims = ['.reveal-left', '.reveal-right', '.reveal-scale'];
+    const allReveal = document.querySelectorAll('.reveal, ' + additionalAnims.join(', '));
+    allReveal.forEach(el => revealObs.observe(el));
+
+    /* Counter animation */
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target as HTMLElement;
+        const target = parseInt(el.dataset.count || '0', 10);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        let current = 0;
+        const step = Math.ceil(target / 60);
+        const timer = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = prefix + current.toLocaleString('fr') + suffix;
+          if (current >= target) clearInterval(timer);
+        }, 20);
+        counterObs.unobserve(el);
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+    /* FAQ accordion */
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
         if (!item) return;
         const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-answer')?.classList.remove('open');
+          i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          item.querySelector('.faq-answer')?.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
     });
 
+    /* Smooth anchor scroll */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const href = a.getAttribute('href');
-        if (!href) return;
+        if (!href || href === '#') return;
         const target = document.querySelector(href);
         if (!target) return;
         e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        const top = (target as HTMLElement).getBoundingClientRect().top + window.scrollY - 80;
         window.scrollTo({ top, behavior: 'smooth' });
       });
+    });
+
+    /* Active nav link */
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      const href = a.getAttribute('href') ?? '';
+      if (href && href !== '/' && currentPath.includes(href.replace(/^\/netandip-site\/?/, ''))) {
+        a.classList.add('active');
+      }
     });
   </script>
 </body>
