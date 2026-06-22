@@ -1,0 +1,76 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  frontmatter?: { title: string; description?: string };
+}
+
+const BASE = import.meta.env.BASE_URL;
+const { title, description, frontmatter } = Astro.props;
+const pageTitle = frontmatter?.title ?? title;
+const pageDesc = frontmatter?.description ?? description ?? '';
+---
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle} — Documentation NetAndIP</title>
+  <meta name="description" content={pageDesc}>
+  <link rel="icon" href={`${BASE}logo.png`} type="image/png">
+  <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+  <Nav />
+  <div class="docs-layout">
+    <aside class="docs-sidebar" aria-label="Navigation documentation">
+      <h3>Démarrage</h3>
+      <ul>
+        <li><a href={`${BASE}docs`}>Vue d'ensemble</a></li>
+        <li><a href={`${BASE}docs/installation`}>Installation</a></li>
+      </ul>
+      <h3>Utilisation</h3>
+      <ul>
+        <li><a href={`${BASE}docs/utilisation`}>Guide d'utilisation</a></li>
+        <li><a href={`${BASE}docs/faq`}>FAQ</a></li>
+      </ul>
+      <h3>Versions</h3>
+      <ul>
+        <li><a href={`${BASE}docs/changelog`}>Historique des versions</a></li>
+        <li><a href={`${BASE}download`}>Télécharger</a></li>
+      </ul>
+    </aside>
+    <main class="docs-content">
+      <slot />
+    </main>
+  </div>
+  <Footer />
+
+  <script>
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav?.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.querySelector('.nav-mobile');
+    const mobileClose = document.querySelector('.nav-mobile-close');
+    burger?.addEventListener('click', () => mobileNav?.classList.add('open'));
+    mobileClose?.addEventListener('click', () => mobileNav?.classList.remove('open'));
+    mobileNav?.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => mobileNav?.classList.remove('open'))
+    );
+
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.docs-sidebar a').forEach(a => {
+      if (a.getAttribute('href') === currentPath || a.getAttribute('href') === currentPath + '/') {
+        a.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

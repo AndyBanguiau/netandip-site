@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andybanguiau.github.io/netandip-site/sitemap-index.xml

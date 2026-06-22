@@ -1,0 +1,102 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const BASE = import.meta.env.BASE_URL;
+const SITE = 'https://andybanguiau.github.io/netandip-site';
+
+const {
+  title,
+  description,
+  canonical = SITE,
+  ogImage = `${SITE}/og-image.png`,
+} = Astro.props;
+---
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="author" content="NetAndIP">
+  <link rel="canonical" href={canonical}>
+  <link rel="icon" href={`${BASE}logo.png`} type="image/png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonical}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+
+  <meta name="theme-color" content="#6366f1">
+  <meta name="robots" content="index, follow">
+</head>
+<body>
+  <Nav />
+  <slot />
+  <Footer />
+
+  <script>
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav?.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    const burger = document.querySelector('.nav-burger');
+    const mobileNav = document.querySelector('.nav-mobile');
+    const mobileClose = document.querySelector('.nav-mobile-close');
+    burger?.addEventListener('click', () => mobileNav?.classList.add('open'));
+    mobileClose?.addEventListener('click', () => mobileNav?.classList.remove('open'));
+    mobileNav?.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => mobileNav?.classList.remove('open'))
+    );
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        if (!item) return;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

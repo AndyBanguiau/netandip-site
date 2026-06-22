@@ -1,0 +1,51 @@
+---
+const BASE = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+---
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <img src={`${BASE}logo.png`} alt="Logo NetAndIP" width="26" height="26">
+          <span>NetAndIP</span>
+        </div>
+        <p>Gestionnaire de configuration réseau Windows. Gratuit, sans inscription, sans données collectées.</p>
+      </div>
+      <nav class="footer-col" aria-label="Produit">
+        <h4>Produit</h4>
+        <ul role="list">
+          <li><a href={`${BASE}#features`}>Fonctionnalités</a></li>
+          <li><a href={`${BASE}#how`}>Comment ça marche</a></li>
+          <li><a href={`${BASE}#pricing`}>Tarifs</a></li>
+          <li><a href={`${BASE}download`}>Télécharger</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Aide">
+        <h4>Aide</h4>
+        <ul role="list">
+          <li><a href={`${BASE}docs`}>Documentation</a></li>
+          <li><a href={`${BASE}#faq`}>FAQ</a></li>
+          <li><a href="mailto:banguiauandy@gmail.com">Support</a></li>
+          <li><a href="https://github.com/AndyBanguiau/netandip" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Légal">
+        <h4>Légal</h4>
+        <ul role="list">
+          <li><a href={`${BASE}privacy`}>Confidentialité</a></li>
+          <li><a href={`${BASE}legal`}>Mentions légales</a></li>
+          <li><a href={`${BASE}terms`}>CGU</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {year} NetAndIP. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href={`${BASE}privacy`}>Politique de confidentialité</a>
+        <a href={`${BASE}legal`}>Mentions légales</a>
+        <a href={`${BASE}terms`}>CGU</a>
+      </div>
+    </div>
+  </div>
+</footer>

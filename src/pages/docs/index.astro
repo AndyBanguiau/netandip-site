@@ -1,0 +1,39 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+const BASE = import.meta.env.BASE_URL;
+---
+<DocsLayout title="Documentation" description="Documentation officielle de NetAndIP — gestionnaire de configuration réseau Windows.">
+  <h1>Documentation NetAndIP</h1>
+  <p class="docs-lead">Bienvenue dans la documentation officielle de NetAndIP v3.0.0.</p>
+
+  <h2>Démarrage rapide</h2>
+  <p>NetAndIP permet de gérer vos configurations réseau Windows en quelques clics. Voici comment commencer :</p>
+  <ol>
+    <li><a href={`${BASE}docs/installation`}>Installez NetAndIP</a> sur votre machine Windows</li>
+    <li>Lancez l'application en tant qu'administrateur</li>
+    <li>Configurez vos sites et rôles dans l'onglet Expert</li>
+    <li>Sauvegardez vos premiers profils réseau</li>
+    <li>Basculez entre profils en un clic depuis le mode Simple</li>
+  </ol>
+
+  <h2>Sections de la documentation</h2>
+
+  <h3>Installation</h3>
+  <p>Guide d'installation complet, configuration requise et première configuration.</p>
+  <p><a href={`${BASE}docs/installation`}>Lire le guide d'installation →</a></p>
+
+  <h3>Guide d'utilisation</h3>
+  <p>Tout ce que vous devez savoir pour utiliser NetAndIP au quotidien : mode Simple, mode Expert, profils, import/export.</p>
+  <p><a href={`${BASE}docs/utilisation`}>Lire le guide d'utilisation →</a></p>
+
+  <h3>FAQ</h3>
+  <p>Réponses aux questions les plus fréquentes : droits administrateur, SmartScreen, mises à jour, partage de configurations.</p>
+  <p><a href={`${BASE}docs/faq`}>Consulter la FAQ →</a></p>
+
+  <h3>Historique des versions</h3>
+  <p>Changelog complet avec les nouvelles fonctionnalités, corrections de bugs et changements pour chaque version.</p>
+  <p><a href={`${BASE}docs/changelog`}>Voir le changelog →</a></p>
+
+  <h2>Support</h2>
+  <p>Vous ne trouvez pas ce que vous cherchez ? Contactez le support à <a href="mailto:banguiauandy@gmail.com">banguiauandy@gmail.com</a> ou consultez les <a href="https://github.com/AndyBanguiau/netandip/issues" target="_blank" rel="noopener">issues GitHub</a>.</p>
+</DocsLayout>

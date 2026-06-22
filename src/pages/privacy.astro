@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+const SITE = 'https://andybanguiau.github.io/netandip-site';
+---
+<Layout
+  title="Politique de confidentialité — NetAndIP"
+  description="Politique de confidentialité de NetAndIP. Aucune donnée personnelle collectée."
+  canonical={`${SITE}/privacy`}
+>
+  <main>
+    <section class="legal-page">
+      <div class="container">
+        <div class="legal-content">
+          <h1>Politique de confidentialité</h1>
+          <p class="legal-date">Dernière mise à jour : juin 2026</p>
+
+          <div class="legal-banner" role="note">
+            ⚠ Ce document est un modèle à faire valider par un professionnel du droit (avocat RGPD) avant publication officielle.
+          </div>
+
+          <h2>Résumé</h2>
+          <p><strong>NetAndIP ne collecte aucune donnée personnelle.</strong> Toutes vos configurations restent sur votre machine. Nous ne stockons pas, ne partageons pas et ne vendons pas vos données.</p>
+
+          <h2>Données collectées</h2>
+          <p>Le logiciel NetAndIP ne collecte aucune donnée personnelle identifiable. Les seules données traitées sont :</p>
+          <ul>
+            <li>Configurations réseau (IP, masque, passerelle, DNS) — stockées localement dans <code>config.json</code> et <code>profiles.json</code> sur votre machine</li>
+            <li>Préférences de l'application — stockées localement dans <code>settings.json</code></li>
+          </ul>
+          <p>Aucune de ces données n'est transmise à des serveurs tiers.</p>
+
+          <h2>Vérification des mises à jour</h2>
+          <p>NetAndIP vérifie automatiquement les mises à jour une fois par jour en contactant l'API publique de GitHub Releases. Cette vérification transmet uniquement :</p>
+          <ul>
+            <li>La version actuelle de l'application</li>
+            <li>Votre adresse IP (inhérente à toute connexion internet — non stockée par nous)</li>
+          </ul>
+          <p>Cette fonctionnalité peut être désactivée dans les paramètres de l'application.</p>
+
+          <h2>Cookies et traceurs</h2>
+          <p>Le site web NetAndIP n'utilise aucun cookie de traçage, aucun outil d'analyse comportementale (Google Analytics, etc.) et aucune technologie de pistage.</p>
+
+          <h2>Droits des utilisateurs (RGPD)</h2>
+          <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
+          <ul>
+            <li><strong>Droit d'accès</strong> : vos données sont stockées localement, vous y avez accès à tout moment</li>
+            <li><strong>Droit à l'effacement</strong> : supprimez les fichiers <code>config.json</code>, <code>profiles.json</code> et <code>settings.json</code></li>
+            <li><strong>Droit à la portabilité</strong> : exportez vos profils en JSON via la fonction Export de l'application</li>
+          </ul>
+
+          <h2>Hébergement du site</h2>
+          <p>Ce site est hébergé sur GitHub Pages. GitHub, Inc. peut traiter des données de connexion conformément à sa propre <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">politique de confidentialité</a>.</p>
+
+          <h2>Contact</h2>
+          <p>Pour toute question relative à la protection de vos données : <a href="mailto:banguiauandy@gmail.com">banguiauandy@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
