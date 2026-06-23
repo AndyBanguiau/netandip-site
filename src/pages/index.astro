@@ -307,22 +307,20 @@ const SITE = 'https://andybanguiau.github.io/netandip-site';
           <div class="pricing-card" role="article" aria-label="Plan Entreprise">
             <div class="pricing-plan">Entreprise</div>
             <div class="pricing-price">
-              Sur <span class="per">devis</span>
+              149 <sup>€</sup><span class="per">/an</span>
             </div>
-            <div class="pricing-annual">&nbsp;</div>
-            <div class="pricing-desc">Pour les organisations, ESN et MSP avec plusieurs techniciens.</div>
+            <div class="pricing-annual">ou <strong>249 €/an</strong> — postes illimités</div>
+            <div class="pricing-desc">Pour les équipes IT, ESN et MSP avec plusieurs techniciens.</div>
             <div class="pricing-sep"></div>
             <ul class="pricing-features" role="list">
               <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>Tout du plan Pro</strong></li>
-              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Licences multi-postes</li>
-              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>Déploiement centralisé</strong></li>
-              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Config partagée via serveur</li>
-              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Mises à jour gérées IT</li>
-              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Facturation mensuelle/annuelle</li>
+              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>Jusqu'à 10 postes</strong> (149 €) ou illimité (249 €)</li>
+              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Export & déploiement de profils inter-postes</li>
+              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Documentation de déploiement</li>
+              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Facturation annuelle unique</li>
               <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SLA & <strong>support dédié</strong></li>
-              <li class="pricing-feat check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Intégration sur mesure</li>
             </ul>
-            <a href={`${BASE}contact`} class="btn btn-outline pricing-cta">Contacter l'équipe commerciale</a>
+            <a href={`${BASE}contact`} class="btn btn-outline pricing-cta">Obtenir la licence Entreprise</a>
           </div>
 
         </div>
@@ -346,7 +344,7 @@ const SITE = 'https://andybanguiau.github.io/netandip-site';
             { q: "Faut-il les droits administrateur ?", a: "Oui, uniquement pour appliquer une configuration réseau. La commande netsh de Windows exige des droits élevés pour modifier la configuration IP. La consultation et la création de profils fonctionnent sans droits élevés." },
             { q: "Windows SmartScreen bloque le téléchargement, est-ce normal ?", a: "Oui, c'est normal pour un logiciel indépendant distribué sans certificat de signature coûteux (plusieurs centaines d'euros par an). Cliquez sur « Informations complémentaires » puis « Exécuter quand même ». Le code source est disponible sur GitHub." },
             { q: "Comment mettre à jour NetAndIP ?", a: "NetAndIP vérifie automatiquement les mises à jour une fois par jour au démarrage. Vous verrez une notification dans l'application. Vos profils et configurations sont entièrement conservés lors de la mise à jour." },
-            { q: "Puis-je partager mes configurations avec mon équipe ?", a: "Oui. Exportez votre config.json et profiles.json, puis importez-les sur les machines de vos collègues. La version Pro inclut des fonctionnalités de partage avancé, et la version Entreprise permet un déploiement centralisé." },
+            { q: "Puis-je partager mes configurations avec mon équipe ?", a: "Oui. Exportez votre config.json (sites et rôles) via Fichier → Exporter, puis importez-le sur les machines de vos collègues. La version Entreprise inclut en plus l'export dédié de profils et une documentation de déploiement." },
           ].map(item => (
             <div class="faq-item">
               <dt>
